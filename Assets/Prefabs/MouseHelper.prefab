@@ -47,8 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e438e7de4b0d62045925a2ebb5c17cb0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  LeftClickFire: {fileID: 6960865139250479811, guid: 6454cf53cf819ae4d910b9f9463d433c, type: 3}
   m_ParticleSystem: {fileID: 5971427356874793078, guid: bf49e799ddf27d74ebdd06b29227d893, type: 3}
   lightTime: 2
+  "leftClickTargetGitmeS\xFCresi": 0.5
+  mousePos: {x: 0, y: 0}
 --- !u!61 &5932520526554834301
 BoxCollider2D:
   m_ObjectHideFlags: 0

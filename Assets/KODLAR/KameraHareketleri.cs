@@ -14,10 +14,11 @@ public class KameraHareketleri : MonoBehaviour
     {
         if (mouseDownSeconds<=0 &&Input.GetMouseButton(0) && GameObject.Find("OyuncuFireHelper").GetComponent<OyuncuFire>().fireUpdate >= OyuncuFire.FireBlastEksilecekSayi)
         {
-            mouseDownSeconds = 2;
+            mouseDownSeconds = 1;
             Vector2 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             GameObject lightHelper = Instantiate(MouseHelperBoom, mouseWorldPos,Quaternion.identity);
             lightHelper.GetComponent<MouseHelper>().MouseHelperStarterBoom(mouseWorldPos);
+            PlayerHandRotateToMouse(mouseWorldPos);
         }
         if (CooldownForSeconds <= 0 &&Input.GetMouseButton(1) && GameObject.FindGameObjectsWithTag("FireCircle").Length<=40 && GameObject.Find("OyuncuFireHelper").GetComponent<OyuncuFire>().fireUpdate >= OyuncuFire.FireParticleEksilecekSayi)
         {
@@ -75,8 +76,7 @@ public class KameraHareketleri : MonoBehaviour
 
         //Get the angle between the points
         float angle = Mathf.Atan2(positionOnScreen.y - mousePos.y, positionOnScreen.x - mousePos.x) * Mathf.Rad2Deg;
-        targetObject.transform.rotation = Quaternion.Euler(new Vector3(targetObject.transform.rotation.x, targetObject.transform.rotation.y, angle-90));
-        Debug.Log(angle);
+
         if (-90 < angle && angle < 90)
         {
             GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale = new Vector3(-playerSpriteScaleX, GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale.y, GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale.z);
@@ -86,5 +86,6 @@ public class KameraHareketleri : MonoBehaviour
             GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale = new Vector3(playerSpriteScaleX, GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale.y, GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale.z);
 
         }
+        targetObject.transform.rotation = Quaternion.Euler(new Vector3(targetObject.transform.rotation.x, targetObject.transform.rotation.y, angle - 90));
     }
 }
