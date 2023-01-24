@@ -6,6 +6,7 @@ public class KameraHareketleri : MonoBehaviour
 {
     public GameObject MouseHelperBoom;
     public GameObject MouseHelperLaser;
+    float playerSpriteScaleX;
     float CooldownForSeconds;
     float spaceDownSeconds=0;
     float mouseDownSeconds=0;
@@ -42,11 +43,16 @@ public class KameraHareketleri : MonoBehaviour
         }
         mouseDownSeconds -= Time.deltaTime;
         CooldownForSeconds -= Time.deltaTime;
+        if (Input.GetMouseButtonUp(1))
+        {
+            GameObject.Find("PlayerHandFire").transform.rotation = Quaternion.Euler(new Vector3(GameObject.Find("PlayerHandFire").transform.rotation.x, GameObject.Find("PlayerHandFire").transform.rotation.y, 0));
+        }
     }
     Transform transPlayer;
     public float smoothSpeed = 0.125f;
     private void Start()
     {
+        playerSpriteScaleX = GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale.x;
         transPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
     }
     private void LateUpdate()
@@ -70,5 +76,15 @@ public class KameraHareketleri : MonoBehaviour
         //Get the angle between the points
         float angle = Mathf.Atan2(positionOnScreen.y - mousePos.y, positionOnScreen.x - mousePos.x) * Mathf.Rad2Deg;
         targetObject.transform.rotation = Quaternion.Euler(new Vector3(targetObject.transform.rotation.x, targetObject.transform.rotation.y, angle-90));
+        Debug.Log(angle);
+        if (-90 < angle && angle < 90)
+        {
+            GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale = new Vector3(-playerSpriteScaleX, GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale.y, GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale.z);
+        }
+        else
+        {
+            GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale = new Vector3(playerSpriteScaleX, GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale.y, GameObject.Find("PlayerSprite").GetComponent<Transform>().localScale.z);
+
+        }
     }
 }

@@ -2569,7 +2569,7 @@ MonoBehaviour:
   fire: 1
   fireUpdate: 0
   fireUpdateSpeed: 25
-  fireLimit: 100
+  fireLimit: 10000
   fireAzalmaSpeed: 10
   PlayerFlameParticle: {fileID: 3392076817029944607, guid: 56051fcd4f36391458c31c53ecd81bbd, type: 3}
   mask: {fileID: 1993026577}

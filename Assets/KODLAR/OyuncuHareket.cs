@@ -32,10 +32,14 @@ public class OyuncuHareket : MonoBehaviour
         if(moveInput != 0)
         {
             playerAnim.SetBool("Walk", true);
-            if(moveInput > 0)
-                playerAnim.gameObject.GetComponent<Transform>().localScale = new Vector2(scaleCharacterX, playerAnim.gameObject.GetComponent<Transform>().localScale.y);
-            else
-                playerAnim.gameObject.GetComponent<Transform>().localScale = new Vector2(-scaleCharacterX, playerAnim.gameObject.GetComponent<Transform>().localScale.y);
+            if (!Input.GetMouseButton(1))
+            {
+                if (moveInput > 0)
+                    playerAnim.gameObject.GetComponent<Transform>().localScale = new Vector2(scaleCharacterX, playerAnim.gameObject.GetComponent<Transform>().localScale.y);
+                else
+                    playerAnim.gameObject.GetComponent<Transform>().localScale = new Vector2(-scaleCharacterX, playerAnim.gameObject.GetComponent<Transform>().localScale.y);
+            }
+
         }
         else
         {
