@@ -55,15 +55,9 @@ public class OyuncuFire : MonoBehaviour
 
     public void Fire(float azaltilacakSayi)
     {
-        if(fireUpdate - azaltilacakSayi >= 0)
-        {
+
             fireUpdate -= azaltilacakSayi;
- 
-
-            
             MaskPosRestorer();
-        }
-
 
     }
     public void FireAzaltici()

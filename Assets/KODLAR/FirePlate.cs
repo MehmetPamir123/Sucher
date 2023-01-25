@@ -14,11 +14,15 @@ public class FirePlate : MonoBehaviour
     }
     public void LitFire()
     {
-        MapMaker.YakilanFirePlateTotal++;
-        Debug.Log(MapMaker.YakilanFirePlateTotal + " / " + MapMaker.FirePlateTotal);
-        transform.GetChild(0).gameObject.SetActive(true);
-        isFire = true;
-        GameObject.FindGameObjectWithTag("Player").GetComponent<OyuncuHareket>().TryOpenDoor();
+        if(isFire == false)
+        {
+            MapMaker.YakilanFirePlateTotal++;
+            Debug.Log(MapMaker.YakilanFirePlateTotal + " / " + MapMaker.FirePlateTotal);
+            transform.GetChild(0).gameObject.SetActive(true);
+            isFire = true;
+            GameObject.FindGameObjectWithTag("Player").GetComponent<OyuncuHareket>().TryOpenDoor();
+        }
+
         //StartCoroutine(LightLife(lifeTime));
     }
     /*IEnumerator LightLife(float time)

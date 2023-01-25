@@ -12,9 +12,14 @@ public class MouseHelper : MonoBehaviour
     public Vector2 mousePos;
     public void MouseHelperStarterBoom(Vector2 mousePos1)
     {
-        mousePos = mousePos1;
-        Yolda();
-        GetComponent<Light2D>().intensity = 0;
+        if (GameObject.Find("OyuncuFireHelper").GetComponent<OyuncuFire>().fireUpdate >= OyuncuFire.FireBlastEksilecekSayi)
+        {
+            mousePos = mousePos1;
+            Yolda();
+            GetComponent<Light2D>().intensity = 0;
+            GameObject.Find("OyuncuFireHelper").GetComponent<OyuncuFire>().Fire(OyuncuFire.FireBlastEksilecekSayi);
+        }
+
     }
     public void Yolda()
     {
@@ -27,12 +32,8 @@ public class MouseHelper : MonoBehaviour
     public void Patladý()
     {
         GetComponent<Light2D>().intensity = lightTime;
-        if (GameObject.Find("OyuncuFireHelper").GetComponent<OyuncuFire>().fireUpdate >= OyuncuFire.FireBlastEksilecekSayi)
-        {
-            Instantiate(m_ParticleSystem, mousePos, Quaternion.identity);
-            GameObject.Find("OyuncuFireHelper").GetComponent<OyuncuFire>().Fire(OyuncuFire.FireBlastEksilecekSayi);
-        }
-        
+        Instantiate(m_ParticleSystem, mousePos, Quaternion.identity);
+
     }
     IEnumerator Patlayacak()
     {
