@@ -17,7 +17,6 @@ public class PortalLevel : MonoBehaviour
         {
             MapMaker.currentLevel++;
             collision.gameObject.GetComponent<OyuncuHareket>().key = false;
-            Debug.LogError("PortalYe");
 
             GameObject.FindGameObjectWithTag("MapMaker").GetComponent<MapMaker>().ReStarto();
             Wait(1);

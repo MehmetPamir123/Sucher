@@ -19,12 +19,14 @@ public class OyuncuFire : MonoBehaviour
     GameObject InstantiateParticle;
     public Image mask;
     float defaultMaskY;
+    float defaultMaskYScale;
 
     private void Start()
     {
         fireUpdate = fireLimit;
         mask = GameObject.Find("Masker").GetComponent<Image>();
         defaultMaskY = mask.transform.position.y;
+        defaultMaskYScale = GameObject.Find("FireBackground").GetComponent<RectTransform>().sizeDelta.y;
         InstantiateParticle = Instantiate(PlayerFlameParticle, transform.parent.position, Quaternion.identity, transform.parent);
         MaskPosRestorer();
     }
@@ -73,7 +75,7 @@ public class OyuncuFire : MonoBehaviour
             Destroy(InstantiateParticle);
         }
         GameObject.Find("PlayerLight").GetComponent<Light2D>().intensity = fireUpdate / fireLimit * 0.9f;
-        Vector2 maskPos = new Vector2(mask.transform.position.x, defaultMaskY + (fireUpdate* 100 / fireLimit));
+        Vector2 maskPos = new Vector2(mask.transform.position.x, defaultMaskY + (fireUpdate* defaultMaskYScale / fireLimit));
         mask.transform.position = maskPos;
     }
     public void NewLevel()
@@ -83,8 +85,6 @@ public class OyuncuFire : MonoBehaviour
             InstantiateParticle = Instantiate(PlayerFlameParticle, transform.parent.position, Quaternion.identity, transform.parent);
         }
         fireUpdate = fireLimit;
-        GameObject.Find("PlayerLight").GetComponent<Light2D>().intensity = fireUpdate / fireLimit * 0.9f;
-        fire = true;
         MaskPosRestorer();
     }
 }
