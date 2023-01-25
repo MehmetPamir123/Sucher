@@ -10,10 +10,12 @@ public class FirePlate : MonoBehaviour
     private void Start()
     {
         MapMaker.FirePlateTotal++;
+        Debug.Log(MapMaker.FirePlateTotal);
     }
     public void LitFire()
     {
         MapMaker.YakilanFirePlateTotal++;
+        Debug.Log(MapMaker.YakilanFirePlateTotal + " / " + MapMaker.FirePlateTotal);
         transform.GetChild(0).gameObject.SetActive(true);
         isFire = true;
         GameObject.FindGameObjectWithTag("Player").GetComponent<OyuncuHareket>().TryOpenDoor();

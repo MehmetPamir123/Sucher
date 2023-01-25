@@ -18,7 +18,6 @@ public class LeftClickFire : MonoBehaviour
         timeToReachTarget = time;
         targetPosition = destination;
         StartCoroutine(DeleteMe(time));
-        Debug.Log("I am ailve at " + startPosition + " for " + timeToReachTarget + " seconds. My goal is " + targetPosition);
     }
     void Update()
     {
@@ -30,5 +29,17 @@ public class LeftClickFire : MonoBehaviour
     {
         yield return new WaitForSeconds(t);
         Destroy(this.gameObject);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Fire Plate")
+        {
+
+            collision.GetComponent<FirePlate>().LitFire();
+        }
+        else
+        {
+
+        }
     }
 }

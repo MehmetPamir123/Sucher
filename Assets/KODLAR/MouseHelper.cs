@@ -37,13 +37,11 @@ public class MouseHelper : MonoBehaviour
     IEnumerator Patlayacak()
     {
         yield return new WaitForSeconds(leftClickTargetGitmeSüresi);
-        Debug.Log("Patladý");
         Patladý();
         while (lightTime > 0)
         {
-            yield return new WaitForSeconds(Time.deltaTime);
-            Debug.Log("sa");
-            lightTime -= Time.deltaTime;
+            yield return new WaitForSeconds(Time.deltaTime*2);
+            lightTime -= Time.deltaTime*2;
             GetComponent<Light2D>().intensity = lightTime;
             if (lightTime <= 0)
             {
@@ -51,17 +49,5 @@ public class MouseHelper : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-
-        if (collision.gameObject.tag == "Fire Plate")
-        {
-
-            collision.GetComponent<FirePlate>().LitFire();
-        }
-        else
-        {
-
-        }
-    }
+    
 }

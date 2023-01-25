@@ -13,7 +13,6 @@ public class PortalLevel : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log(collision.gameObject.tag);
         if (collision.gameObject.tag == "Player" && this.gameObject.GetComponent<SpriteRenderer>().sprite == doorOpened)
         {
             MapMaker.currentLevel++;
