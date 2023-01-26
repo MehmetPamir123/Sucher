@@ -23,12 +23,18 @@ public class MainMenuCamera : MonoBehaviour
     }
     public void FirstStart()
     {
-        SceneManager.LoadScene("SampleScene");
         MapMaker.currentLevel = 1;
+        SceneManager.LoadScene("SampleScene");
+
     }
     public void TutorialStart()
     {
-        SceneManager.LoadScene("SampleScene");
         MapMaker.currentLevel = 0;
+        SceneManager.LoadScene("SampleScene");
+ 
+    }
+    public void GoToCredits()
+    {
+        SceneManager.LoadScene("Credits");
     }
 }

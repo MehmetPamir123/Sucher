@@ -24,7 +24,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 3551
+  controlID: 13224
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -86,7 +86,7 @@ MonoBehaviour:
     m_HSlider: 0
     m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 3552
+  controlID: 13225
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -166,7 +166,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 3553
+  controlID: 13226
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -224,23 +224,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: b2a50000
-      m_LastClickedID: 42418
-      m_ExpandedIDs: f819feffa41afeffaa36feff9838feffb440feff6641feff2e76feffe6a2feff2afbffff84970000a09700002c9b0000d2a10000dca10000eca10000f0a1000008a2000064a400006ea400007ea4000082a400009aa40000a8a50000b2a50000c2a50000c6a50000dea50000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: 5c8efcff108ffcffc88ffcfffa9afcffb69bfcfff819feffa41afeffaa36feff9838feffb440feff6641feff2e76feffe6a2feff2afbffff84970000a09700002c9b0000d2a10000dca10000eca10000f0a1000008a2000064a400006ea400007ea4000082a400009aa40000a8a50000b2a50000c2a50000c6a50000dea500000ead000026af0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: EventSystem
-        m_OriginalName: EventSystem
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 42426
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 5}
       m_SearchString: 
@@ -558,9 +558,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 603.90485, y: 236.00523, z: 2.0195982}
+    m_Target: {x: 0.8813395, y: 0.75826955, z: 101.94908}
     speed: 2
-    m_Value: {x: 603.90485, y: 236.00523, z: 2.0195982}
+    m_Value: {x: 0.8813395, y: 0.75826955, z: 101.94908}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -611,9 +611,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 464.04376
+    m_Target: 15.61552
     speed: 2
-    m_Value: 464.04376
+    m_Value: 15.61552
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -770,21 +770,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\GitHubFilesForMich\Sucher
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: f86d0000
-    m_LastClickedID: 28152
+    m_SelectedIDs: 586e0000
+    m_LastClickedID: 28248
     m_ExpandedIDs: 00000000f86d0000fa6d0000fc6d000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -838,8 +838,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b2a50000
-    m_LastClickedInstanceID: 42418
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000a86c0000186d00006e6f0000
     m_RenameOverlay:
@@ -916,8 +916,8 @@ MonoBehaviour:
     y: 0
     width: 450
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
