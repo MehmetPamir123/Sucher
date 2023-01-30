@@ -81,6 +81,7 @@ public class OyuncuHareket : MonoBehaviour
         {
             Destroy(collision.gameObject);
             key = true;
+            FindObjectOfType<GlobalMusic>().CustomeudioPlayAudio("GetKey");
             TryOpenDoor();
         }
         
@@ -90,6 +91,7 @@ public class OyuncuHareket : MonoBehaviour
         if(key == true && MapMaker.FirePlateTotal == MapMaker.YakilanFirePlateTotal)
         {
             GameObject.FindGameObjectWithTag("Portal").GetComponent<SpriteRenderer>().sprite = doorOpened;
+            GameObject.FindGameObjectWithTag("Portal").GetComponent<AudioSource>().Play();
         }
     }
 }

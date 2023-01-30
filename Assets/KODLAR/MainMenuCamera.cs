@@ -13,6 +13,7 @@ public class MainMenuCamera : MonoBehaviour
         button = GameObject.Find("F");
         Vector2 buttonTrans = new Vector2(Random.Range(-460, 460), Random.Range(-270, 270));
         button.GetComponent<RectTransform>().localPosition = buttonTrans;
+        
     }
 
     private void Update()
@@ -25,16 +26,21 @@ public class MainMenuCamera : MonoBehaviour
     {
         MapMaker.currentLevel = 1;
         SceneManager.LoadScene("SampleScene");
+        FindObjectOfType<GlobalMusic>().CustomeudioPlayAudio("Button");
+        FindObjectOfType<GlobalMusic>().CustomeudioPlayAudio("Calm");
 
     }
     public void TutorialStart()
     {
         MapMaker.currentLevel = 0;
         SceneManager.LoadScene("SampleScene");
- 
+        FindObjectOfType<GlobalMusic>().CustomeudioPlayAudio("Button");
+        FindObjectOfType<GlobalMusic>().CustomeudioPlayAudio("Calm");
+
     }
     public void GoToCredits()
     {
         SceneManager.LoadScene("Credits");
+        FindObjectOfType<GlobalMusic>().CustomeudioPlayAudio("Button");
     }
 }

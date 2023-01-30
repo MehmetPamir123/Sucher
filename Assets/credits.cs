@@ -7,5 +7,6 @@ public class credits : MonoBehaviour
    public void ReturnMenu()
     {
         SceneManager.LoadScene("MainMenu");
+        GameObject.FindGameObjectWithTag("Music").GetComponent<GlobalMusic>().CustomeudioPlayAudio("Button");
     }
 }

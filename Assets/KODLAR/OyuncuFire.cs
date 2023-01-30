@@ -9,6 +9,7 @@ public class OyuncuFire : MonoBehaviour
     public static float FireBlastEksilecekSayi = 50;
     public static float FireParticleEksilecekSayi = 2;
 
+    
     public bool fire = true;
     public float fireUpdate;
     public float fireUpdateSpeed;
@@ -17,6 +18,7 @@ public class OyuncuFire : MonoBehaviour
 
     public GameObject PlayerFlameParticle;
     GameObject InstantiateParticle;
+
     public Image mask;
     float defaultMaskY;
     float defaultMaskYScale;

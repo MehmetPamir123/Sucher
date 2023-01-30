@@ -6,6 +6,7 @@ public class KameraHareketleri : MonoBehaviour
 {
     public GameObject MouseHelperBoom;
     public GameObject MouseHelperLaser;
+    public AudioSource CampFireSource;
     float playerSpriteScaleX;
     float CooldownForSeconds;
     float spaceDownSeconds=0;
@@ -19,6 +20,7 @@ public class KameraHareketleri : MonoBehaviour
             GameObject lightHelper = Instantiate(MouseHelperBoom, mouseWorldPos,Quaternion.identity);
             lightHelper.GetComponent<MouseHelper>().MouseHelperStarterBoom(mouseWorldPos);
             PlayerHandRotateToMouse(mouseWorldPos);
+            FindObjectOfType<GlobalMusic>().CustomeudioPlayAudio("FireballFire");
         }
         if (CooldownForSeconds <= 0 &&Input.GetMouseButton(1) && GameObject.FindGameObjectsWithTag("FireCircle").Length<=40 && GameObject.Find("OyuncuFireHelper").GetComponent<OyuncuFire>().fireUpdate >= OyuncuFire.FireParticleEksilecekSayi)
         {
@@ -28,6 +30,7 @@ public class KameraHareketleri : MonoBehaviour
             GameObject.Find("OyuncuFireHelper").GetComponent<OyuncuFire>().Fire(OyuncuFire.FireParticleEksilecekSayi);
             PlayerHandRotateToMouse(mouseWorldPos);
             StartCoroutine(SpawnCooldown());
+            CampFireSource.Play();
         }
         if (Input.GetKey(KeyCode.Space))
         {
@@ -47,6 +50,7 @@ public class KameraHareketleri : MonoBehaviour
         if (Input.GetMouseButtonUp(1))
         {
             GameObject.Find("PlayerHandFire").transform.rotation = Quaternion.Euler(new Vector3(GameObject.Find("PlayerHandFire").transform.rotation.x, GameObject.Find("PlayerHandFire").transform.rotation.y, 0));
+            CampFireSource.Stop();
         }
     }
     Transform transPlayer;
